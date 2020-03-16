@@ -3,7 +3,6 @@ Objection Mixin adds:
 - sync 
 - getById
 - getByKey 
-- automatic password hashing (powered by bcrypt)
 
 functionality to your classes, while automatically setting your class tablenames and timestamps (to an ISOString).
 
