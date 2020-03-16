@@ -34,6 +34,7 @@ class BaseModel extends  OM(Model) {
 
 class User extends BaseModel {
 
+    // example of extending your model with bycript package
     async $beforeInsert(){
         await super.$beforeInsert()
         if(this.password) this.password = await bcrypt
