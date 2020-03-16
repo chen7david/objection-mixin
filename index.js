@@ -1,6 +1,4 @@
 const { pluralize, timestamp, notIn } = require('funx-js')
-const bcrypt = require('bcrypt')
-const BCRYPT_ROUNDS = 12
 
 module.exports = (Model) => {
 

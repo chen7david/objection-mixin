@@ -16,6 +16,8 @@ const knexfile = require('./knexfile').development
 const knex = require('knex')(knexfile)
 const OM = require('objection-mixin')
 const { Model } = require('objection')
+const bcrypt = require('bcrypt')
+const BCRYPT_ROUNDS = 12
 
 Model.knex(knex)
 
@@ -33,6 +35,7 @@ class BaseModel extends  OM(Model) {
 }
 
 class User extends BaseModel {
+
     async $beforeInsert(){
         await super.$beforeInsert()
         if(this.password) this.password = await bcrypt
@@ -44,6 +47,7 @@ class User extends BaseModel {
         if(this.password) this.password = await bcrypt
             .hash(this.password, BCRYPT_ROUNDS)
     }
+
 }
 ```
 
