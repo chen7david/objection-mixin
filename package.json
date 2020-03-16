@@ -23,6 +23,6 @@
   },
   "homepage": "https://github.com/chen7david/objection-mixin#readme",
   "dependencies": {
-    "funx-js": "0.0.12"
+    "funx-js": "0.0.13"
   }
 }
