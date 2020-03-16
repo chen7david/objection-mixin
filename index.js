@@ -1,4 +1,6 @@
 const { pluralize, timestamp, notIn } = require('funx-js')
+const bcrypt = require('bcrypt')
+const BCRYPT_ROUNDS = 12
 
 module.exports = (Model) => {
 
@@ -24,19 +26,27 @@ module.exports = (Model) => {
             const original = related.map(el => el.id)
             const add = notIn(target, original)
             const remove = notIn(original, target)
+            if(add.length + remove.length == 0) return false
             const relId = customId ? customId : 
                 pluralize.singular(relation) + '_id'
             
-            await this
+            const added = await this
                 .$relatedQuery(relation)
                 .relate(add)
-            await this
+            const removed = await this
                 .$relatedQuery(relation)
                 .unrelate()
                 .whereIn(relId, remove)
+            return added + removed > 0
+        }
+
+        async verifyPassword(password){
+            return await bcrypt.compare(password, this.password)    
         }
 
         $beforeInsert(){
+            if(this.password) this.password = await bcrypt
+                .hash(this.password, BCRYPT_ROUNDS)
             this.created_at = timestamp()
             this.updated_at = timestamp()
         }
@@ -46,6 +56,6 @@ module.exports = (Model) => {
         }
 
     }
-    
+
     return BaseModel
 }
