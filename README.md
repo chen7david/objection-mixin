@@ -11,7 +11,6 @@ functionality to your classes, while automatically setting your class tablenames
 Below is an example to help you get started.
 
 ```js
-const { dd } = require('funx-js')
 const knexfile = require('./knexfile').development
 const knex = require('knex')(knexfile)
 const OM = require('objection-mixin')
