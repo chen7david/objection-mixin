@@ -38,10 +38,6 @@ module.exports = (Model) => {
             return added + removed > 0
         }
 
-        async verifyPassword(password){
-            return await bcrypt.compare(password, this.password)    
-        }
-
         async $beforeInsert(){
             if(this.password) this.password = await bcrypt
                 .hash(this.password, BCRYPT_ROUNDS)
