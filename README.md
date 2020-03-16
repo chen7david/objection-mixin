@@ -1,5 +1,10 @@
 # Objection Mixin
-Objection Mixin adds sync, getById and getByKey functionality to your classes, while automatically setting your class tablenames and timestamps to an ISOString.
+Objection Mixin adds: 
+- sync 
+- getById
+- getByKey 
+- automatic password hashing (powered by bcrypt)
+functionality to your classes, while automatically setting your class tablenames and timestamps to an ISOString.
 
 ## Getting Started
 Below is an example to help you get started.
@@ -23,7 +28,7 @@ class BaseModel extends  OM(Model) {
         delete json.password
         return json
     }
-    
+
 }
 
 class User extends BaseModel {
