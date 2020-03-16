@@ -1,7 +1,7 @@
 {
   "name": "objection-mixin",
-  "version": "0.0.1",
-  "description": "coming soon ...",
+  "version": "0.0.2",
+  "description": "adds sync and auto table-names functionality to objection js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
