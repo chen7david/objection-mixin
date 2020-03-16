@@ -23,7 +23,6 @@
   },
   "homepage": "https://github.com/chen7david/objection-mixin#readme",
   "dependencies": {
-    "bcrypt": "^4.0.1",
     "funx-js": "0.0.12"
   }
 }

@@ -33,7 +33,17 @@ class BaseModel extends  OM(Model) {
 }
 
 class User extends BaseModel {
+    async $beforeInsert(){
+        await super.$beforeInsert()
+        if(this.password) this.password = await bcrypt
+            .hash(this.password, BCRYPT_ROUNDS)
+    }
 
+    async $beforeUpdate(){
+        await super.$beforeInsert()
+        if(this.password) this.password = await bcrypt
+            .hash(this.password, BCRYPT_ROUNDS)
+    }
 }
 ```
 
