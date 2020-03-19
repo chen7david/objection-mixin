@@ -50,8 +50,6 @@ module.exports = (Model) => {
         }
 
         async $beforeInsert(){
-            if(this.password) this.password = await bcrypt
-                .hash(this.password, BCRYPT_ROUNDS)
             this.created_at = timestamp()
             this.updated_at = timestamp()
         }
