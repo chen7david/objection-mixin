@@ -1,5 +1,6 @@
 # Objection Mixin
 Objection Mixin adds: 
+- auto pluralization of tablename
 - sync 
 - getById
 - getByKey 

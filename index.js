@@ -1,3 +1,4 @@
+const { pluralize, timestamp, notIn } = require('./functions')
 
 module.exports = (Model) => {
 
@@ -56,7 +57,6 @@ module.exports = (Model) => {
         async $beforeUpdate(){
             this.updated_at = timestamp() 
         }
-
     }
 
     return BaseModel
