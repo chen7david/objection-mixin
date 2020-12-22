@@ -1,4 +1,3 @@
-const { pluralize, timestamp, notIn } = require('funx-js')
 
 module.exports = (Model) => {
 
