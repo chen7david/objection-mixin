@@ -1,4 +1,4 @@
-# Objection Mixin
+# Objection Mixin (OMX)
 Objection Mixin adds: 
 - auto pluralization of tablename
 - sync 
