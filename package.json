@@ -1,6 +1,6 @@
 {
   "name": "objection-mixin",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "adds sync and auto table-names functionality to objection js",
   "main": "index.js",
   "scripts": {

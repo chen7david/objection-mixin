@@ -61,12 +61,22 @@ class User extends BaseModel {
 #### .$sync()
 The sycn method can only be called on an instance where a ManyToManyRelation has been defined.
 This method takes three arguments. The first two are required, and the last one is optional.
-e.g. <code>instance.$sync(relation_name, [1,2,3,4, ..., n], id_field_name)</code>
+e.g.
+```js
+instance.$sync('relation_name', [1,2,3,4, ..., n], 'id_field_name')
+```
 
 #### .getById()
 The getById is an asynchronous class method, that takes in one argument and returns an object if a match was found else null. 
-e.g. <code>class.getById(id)</code>
+e.g.
+```js
+class.getById(id)
+```
 
 #### .getByKey()
 The getByKey method can only be called on the class. It returns an object if a match was found else null. 
-e.g. <code>class.getByKey(field_name, field_value)</code>
+e.g.
+
+```js
+class.getByKey('field_name', 'field_value')
+```
